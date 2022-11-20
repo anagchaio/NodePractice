@@ -14,6 +14,12 @@ app.get("/", (request, response) => {
   response.end(file);
 });
 
+app.get("/personajes", (request, response) => {
+  const personajesFile = fs.readFileSync(__dirname + '/src/data/personajes.json');
+  response.send(JSON.parse(personajesFile));
+});
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
