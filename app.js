@@ -7,6 +7,8 @@ const port = 3000;
 
 app.use(express.static('public'));
 
+app.use(express.json());
+
 app.get("/", (request, response) => {
   const file = fs.readFileSync(__dirname + '/public/index.html');
 
@@ -22,3 +24,4 @@ app.use('/', ruta);
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
